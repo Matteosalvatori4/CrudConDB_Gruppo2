@@ -16,12 +16,10 @@ public interface CrudService {
 
     List<Prodotto> rimuovi(Prodotto p);
 
-    List<Prodotto> cerca();
+    List<Prodotto> cerca(String codice);
 
     List<Prodotto> conferma(Prodotto p);
     
     List<Prodotto> aggiornaLista();
 
-    void modifica();
-    
 }

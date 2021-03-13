@@ -30,8 +30,8 @@ public class CrudServiceImpl implements CrudService{
     }
 
     @Override
-    public List<Prodotto> cerca() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<Prodotto> cerca(String codice) {
+        return prodottoRepository.findByCodiceContains(codice);
     }
     
     @Override
@@ -44,11 +44,6 @@ public class CrudServiceImpl implements CrudService{
      public List<Prodotto> aggiornaLista(){
          return prodottoRepository.findAll();
      }
-            
-    @Override
-    public void modifica() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
     }
     

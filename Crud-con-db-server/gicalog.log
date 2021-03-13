@@ -52,3 +52,5 @@ due.gruppo.Crudcondbserver.controller.CrudController#aggiungiProdotto(ProdottoDt
 	... 17 common frames omitted
 
 2021-03-13 16:39:35.661  WARN 15712 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-13 16:57:23.961 DEBUG 12916 --- [main] org.hibernate.SQL                        : create table prodotto (codice varchar(255) not null, descrizione varchar(255), primary key (codice)) engine=InnoDB
+2021-03-13 16:57:24.299  WARN 12916 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
