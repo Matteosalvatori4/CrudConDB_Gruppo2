@@ -18,6 +18,7 @@ public class Prodotto {
 
     @Id
     private String codice;
+    
     @Column
     private String descrizione;
 

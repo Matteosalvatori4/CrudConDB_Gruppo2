@@ -8,6 +8,7 @@ package due.gruppo.Crudcondbserver.service.impl;
 import due.gruppo.Crudcondbserver.model.Prodotto;
 import due.gruppo.Crudcondbserver.repository.ProdottoRepository;
 import due.gruppo.Crudcondbserver.service.CrudService;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,25 +24,27 @@ public class CrudServiceImpl implements CrudService{
     
 
     @Override
-    public void rimuovi(Prodotto p) {
+    public List<Prodotto> rimuovi(Prodotto p) {
         prodottoRepository.delete(p);
+        return aggiornaLista();
     }
 
     @Override
-    public void cerca() {
+    public List<Prodotto> cerca() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void annulla() {
     }
     
     @Override
-    public void conferma(Prodotto p) {
+    public List<Prodotto> conferma(Prodotto p) {
         prodottoRepository.save(p);
-       
+         return aggiornaLista();
     }
-
+    
+    @Override
+     public List<Prodotto> aggiornaLista(){
+         return prodottoRepository.findAll();
+     }
+            
     @Override
     public void modifica() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

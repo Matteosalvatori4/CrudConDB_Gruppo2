@@ -6,6 +6,7 @@
 package due.gruppo.Crudcondbserver.service;
 
 import due.gruppo.Crudcondbserver.model.Prodotto;
+import java.util.List;
 
 /**
  *
@@ -13,13 +14,13 @@ import due.gruppo.Crudcondbserver.model.Prodotto;
  */
 public interface CrudService {
 
-    void rimuovi(Prodotto p);
+    List<Prodotto> rimuovi(Prodotto p);
 
-    void cerca();
+    List<Prodotto> cerca();
 
-    void annulla();
-
-    void conferma(Prodotto p);
+    List<Prodotto> conferma(Prodotto p);
+    
+    List<Prodotto> aggiornaLista();
 
     void modifica();
     
