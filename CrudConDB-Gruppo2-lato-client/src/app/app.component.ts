@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Prodotto } from './Prodotto';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'CrudConDB-Gruppo2-lato-client';
+  prodotto:Prodotto;
+
+  aggiungiModifica(){}
+
+  rimuovi(){}
+
+  cerca(s:string){}
+
+  seleziona(p: Prodotto){}
 }
