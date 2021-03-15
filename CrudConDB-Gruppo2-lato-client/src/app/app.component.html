@@ -1,2 +1,17 @@
-<app-tabella-prodotti></app-tabella-prodotti>
+<div>
+    codice: <input type="text" [(ngModel)]="prodotto.codice"> descrizione: <input type="text" [(ngModel)]="prodotto.descrizione">
+</div>
+<br>
+<div>
+    <button (click)="aggiungiModifica()"> Conferma</button>
+    <button (click)="annulla()"> Annulla</button>
+</div>
+<br>
+<div>
+    <button (click)="aggiungiModifica()"> Modifica</button>
+    <button (click)="rimuovi()">Rimuovi</button>
+</div>
+<div>
+    <app-tabella-prodotti (nuovaEvent)="nuova()" (cercaEvent)="cerca($event)"></app-tabella-prodotti>
+</div>
 <router-outlet></router-outlet>

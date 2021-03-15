@@ -19,7 +19,7 @@ interface State {
     conferma(b: boolean);
 }
 
-class Prodottos {
+export class Prodottos {
 
     statoCorrente: State;
     public ricerca: State;
