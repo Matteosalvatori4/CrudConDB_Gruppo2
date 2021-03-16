@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class ListaProdottiDto {
     
-    private List<Prodotto> prodotti;
+    List<Prodotto> prodotti;
 
     public ListaProdottiDto(List<Prodotto> prodotti) {
         this.prodotti = prodotti;
