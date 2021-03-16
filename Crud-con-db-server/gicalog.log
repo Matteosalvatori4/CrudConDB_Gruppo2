@@ -1,56 +1,50 @@
-2021-03-13 00:40:04.069 DEBUG 13396 --- [main] org.hibernate.SQL                        : create table prodotto (codice varchar(255) not null, descrizione varchar(255), primary key (codice)) engine=InnoDB
-2021-03-13 00:40:04.763  WARN 13396 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-03-13 00:41:37.917  WARN 18016 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-03-13 16:35:24.332 DEBUG 13288 --- [main] org.hibernate.SQL                        : create table prodotto (codice varchar(255) not null, descrizione varchar(255), primary key (codice)) engine=InnoDB
-2021-03-13 16:35:24.642  WARN 13288 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-03-13 16:35:24.810  WARN 13288 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'crudController' method 
-due.gruppo.Crudcondbserver.controller.CrudController#rimuoviProdotto(ProdottoDto)
-to { [/rimuovi]}: There is already 'crudController' bean method
-due.gruppo.Crudcondbserver.controller.CrudController#aggiungiProdotto(ProdottoDto) mapped.
-2021-03-13 16:35:24.851 ERROR 13288 --- [main] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'crudController' method 
-due.gruppo.Crudcondbserver.controller.CrudController#rimuoviProdotto(ProdottoDto)
-to { [/rimuovi]}: There is already 'crudController' bean method
-due.gruppo.Crudcondbserver.controller.CrudController#aggiungiProdotto(ProdottoDto) mapped.
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:917) ~[spring-context-5.3.4.jar:5.3.4]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:582) ~[spring-context-5.3.4.jar:5.3.4]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144) ~[spring-boot-2.4.3.jar:2.4.3]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767) ~[spring-boot-2.4.3.jar:2.4.3]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759) ~[spring-boot-2.4.3.jar:2.4.3]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426) ~[spring-boot-2.4.3.jar:2.4.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326) ~[spring-boot-2.4.3.jar:2.4.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1311) ~[spring-boot-2.4.3.jar:2.4.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300) ~[spring-boot-2.4.3.jar:2.4.3]
-	at due.gruppo.Crudcondbserver.CrudConDbServerApplication.main(CrudConDbServerApplication.java:10) ~[classes/:na]
-Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'crudController' method 
-due.gruppo.Crudcondbserver.controller.CrudController#rimuoviProdotto(ProdottoDto)
-to { [/rimuovi]}: There is already 'crudController' bean method
-due.gruppo.Crudcondbserver.controller.CrudController#aggiungiProdotto(ProdottoDto) mapped.
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:659) ~[spring-webmvc-5.3.4.jar:5.3.4]
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:625) ~[spring-webmvc-5.3.4.jar:5.3.4]
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:325) ~[spring-webmvc-5.3.4.jar:5.3.4]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:395) ~[spring-webmvc-5.3.4.jar:5.3.4]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:76) ~[spring-webmvc-5.3.4.jar:5.3.4]
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$2(AbstractHandlerMethodMapping.java:295) ~[spring-webmvc-5.3.4.jar:5.3.4]
-	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:684) ~[na:na]
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:293) ~[spring-webmvc-5.3.4.jar:5.3.4]
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:265) ~[spring-webmvc-5.3.4.jar:5.3.4]
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:224) ~[spring-webmvc-5.3.4.jar:5.3.4]
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:212) ~[spring-webmvc-5.3.4.jar:5.3.4]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:206) ~[spring-webmvc-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1845) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782) ~[spring-beans-5.3.4.jar:5.3.4]
-	... 17 common frames omitted
-
-2021-03-13 16:39:35.661  WARN 15712 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-03-13 16:57:23.961 DEBUG 12916 --- [main] org.hibernate.SQL                        : create table prodotto (codice varchar(255) not null, descrizione varchar(255), primary key (codice)) engine=InnoDB
-2021-03-13 16:57:24.299  WARN 12916 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-16 19:45:11.821  WARN 16736 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-16 19:47:17.437 DEBUG 16736 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select prodotto0_.codice as codice1_0_, prodotto0_.descrizione as descrizi2_0_ from prodotto prodotto0_
+2021-03-16 19:49:22.461 DEBUG 16736 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : select prodotto0_.codice as codice1_0_, prodotto0_.descrizione as descrizi2_0_ from prodotto prodotto0_
+2021-03-16 19:51:21.110 DEBUG 16736 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : select prodotto0_.codice as codice1_0_, prodotto0_.descrizione as descrizi2_0_ from prodotto prodotto0_
+2021-03-16 19:51:32.635 DEBUG 16736 --- [http-nio-8080-exec-8] org.hibernate.SQL                        : select prodotto0_.codice as codice1_0_0_, prodotto0_.descrizione as descrizi2_0_0_ from prodotto prodotto0_ where prodotto0_.codice=?
+2021-03-16 19:51:32.641 TRACE 16736 --- [http-nio-8080-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [ssss]
+2021-03-16 19:51:32.684 DEBUG 16736 --- [http-nio-8080-exec-8] org.hibernate.SQL                        : insert into prodotto (descrizione, codice) values (?, ?)
+2021-03-16 19:51:32.686 TRACE 16736 --- [http-nio-8080-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [sssss]
+2021-03-16 19:51:32.688 TRACE 16736 --- [http-nio-8080-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [ssss]
+2021-03-16 19:51:32.733 DEBUG 16736 --- [http-nio-8080-exec-8] org.hibernate.SQL                        : select prodotto0_.codice as codice1_0_, prodotto0_.descrizione as descrizi2_0_ from prodotto prodotto0_
+2021-03-16 19:54:33.921 DEBUG 16736 --- [http-nio-8080-exec-9] org.hibernate.SQL                        : select prodotto0_.codice as codice1_0_0_, prodotto0_.descrizione as descrizi2_0_0_ from prodotto prodotto0_ where prodotto0_.codice=?
+2021-03-16 19:54:33.923 TRACE 16736 --- [http-nio-8080-exec-9] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [ssss]
+2021-03-16 19:54:33.937 DEBUG 16736 --- [http-nio-8080-exec-9] org.hibernate.SQL                        : select prodotto0_.codice as codice1_0_, prodotto0_.descrizione as descrizi2_0_ from prodotto prodotto0_
+2021-03-16 19:55:07.027 DEBUG 16736 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select prodotto0_.codice as codice1_0_0_, prodotto0_.descrizione as descrizi2_0_0_ from prodotto prodotto0_ where prodotto0_.codice=?
+2021-03-16 19:55:07.029 TRACE 16736 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [ssss]
+2021-03-16 19:55:07.035 DEBUG 16736 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select prodotto0_.codice as codice1_0_, prodotto0_.descrizione as descrizi2_0_ from prodotto prodotto0_
+2021-03-16 20:26:17.200 DEBUG 16736 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : select prodotto0_.codice as codice1_0_0_, prodotto0_.descrizione as descrizi2_0_0_ from prodotto prodotto0_ where prodotto0_.codice=?
+2021-03-16 20:26:17.202 TRACE 16736 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [ssss]
+2021-03-16 20:26:17.212 DEBUG 16736 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : select prodotto0_.codice as codice1_0_, prodotto0_.descrizione as descrizi2_0_ from prodotto prodotto0_
+2021-03-16 20:41:24.549 DEBUG 16736 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : select prodotto0_.codice as codice1_0_, prodotto0_.descrizione as descrizi2_0_ from prodotto prodotto0_
+2021-03-16 20:45:22.480 DEBUG 16736 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : select prodotto0_.codice as codice1_0_, prodotto0_.descrizione as descrizi2_0_ from prodotto prodotto0_
+2021-03-16 20:45:37.719 DEBUG 16736 --- [http-nio-8080-exec-9] org.hibernate.SQL                        : select prodotto0_.codice as codice1_0_0_, prodotto0_.descrizione as descrizi2_0_0_ from prodotto prodotto0_ where prodotto0_.codice=?
+2021-03-16 20:45:37.720 TRACE 16736 --- [http-nio-8080-exec-9] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [sssssss]
+2021-03-16 20:45:37.724 DEBUG 16736 --- [http-nio-8080-exec-9] org.hibernate.SQL                        : insert into prodotto (descrizione, codice) values (?, ?)
+2021-03-16 20:45:37.725 TRACE 16736 --- [http-nio-8080-exec-9] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [null]
+2021-03-16 20:45:37.727 TRACE 16736 --- [http-nio-8080-exec-9] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [sssssss]
+2021-03-16 20:45:37.745 DEBUG 16736 --- [http-nio-8080-exec-9] org.hibernate.SQL                        : select prodotto0_.codice as codice1_0_, prodotto0_.descrizione as descrizi2_0_ from prodotto prodotto0_
+2021-03-16 20:46:23.002 DEBUG 16736 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select prodotto0_.codice as codice1_0_0_, prodotto0_.descrizione as descrizi2_0_0_ from prodotto prodotto0_ where prodotto0_.codice=?
+2021-03-16 20:46:23.003 TRACE 16736 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [sssssss]
+2021-03-16 20:46:23.009 DEBUG 16736 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select prodotto0_.codice as codice1_0_, prodotto0_.descrizione as descrizi2_0_ from prodotto prodotto0_
+2021-03-16 20:46:26.032 DEBUG 16736 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select prodotto0_.codice as codice1_0_0_, prodotto0_.descrizione as descrizi2_0_0_ from prodotto prodotto0_ where prodotto0_.codice=?
+2021-03-16 20:46:26.033 TRACE 16736 --- [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [sssssss]
+2021-03-16 20:46:26.039 DEBUG 16736 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select prodotto0_.codice as codice1_0_, prodotto0_.descrizione as descrizi2_0_ from prodotto prodotto0_
+2021-03-16 20:47:03.166 DEBUG 16736 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : select prodotto0_.codice as codice1_0_, prodotto0_.descrizione as descrizi2_0_ from prodotto prodotto0_
+2021-03-16 20:47:11.027 DEBUG 16736 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : select prodotto0_.codice as codice1_0_0_, prodotto0_.descrizione as descrizi2_0_0_ from prodotto prodotto0_ where prodotto0_.codice=?
+2021-03-16 20:47:11.028 TRACE 16736 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [fkdjfksdjfs]
+2021-03-16 20:47:11.032 DEBUG 16736 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : insert into prodotto (descrizione, codice) values (?, ?)
+2021-03-16 20:47:11.035 TRACE 16736 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [djasdkhdoas]
+2021-03-16 20:47:11.036 TRACE 16736 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [fkdjfksdjfs]
+2021-03-16 20:47:11.046 DEBUG 16736 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : select prodotto0_.codice as codice1_0_, prodotto0_.descrizione as descrizi2_0_ from prodotto prodotto0_
+2021-03-16 20:49:55.984 DEBUG 16736 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : select prodotto0_.codice as codice1_0_, prodotto0_.descrizione as descrizi2_0_ from prodotto prodotto0_
+2021-03-16 20:49:59.979 DEBUG 16736 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : select prodotto0_.codice as codice1_0_0_, prodotto0_.descrizione as descrizi2_0_0_ from prodotto prodotto0_ where prodotto0_.codice=?
+2021-03-16 20:49:59.981 TRACE 16736 --- [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [aaaa]
+2021-03-16 20:49:59.984 DEBUG 16736 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : insert into prodotto (descrizione, codice) values (?, ?)
+2021-03-16 20:49:59.985 TRACE 16736 --- [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [aaaa]
+2021-03-16 20:49:59.988 TRACE 16736 --- [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [aaaa]
+2021-03-16 20:50:00.001 DEBUG 16736 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : select prodotto0_.codice as codice1_0_, prodotto0_.descrizione as descrizi2_0_ from prodotto prodotto0_
+2021-03-16 20:50:40.330 DEBUG 16736 --- [http-nio-8080-exec-8] org.hibernate.SQL                        : select prodotto0_.codice as codice1_0_, prodotto0_.descrizione as descrizi2_0_ from prodotto prodotto0_
+2021-03-16 20:54:01.006 DEBUG 16736 --- [http-nio-8080-exec-9] org.hibernate.SQL                        : select prodotto0_.codice as codice1_0_, prodotto0_.descrizione as descrizi2_0_ from prodotto prodotto0_
+2021-03-16 21:01:22.515 DEBUG 16736 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select prodotto0_.codice as codice1_0_, prodotto0_.descrizione as descrizi2_0_ from prodotto prodotto0_
