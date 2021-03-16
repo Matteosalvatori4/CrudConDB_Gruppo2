@@ -5,9 +5,11 @@
  */
 package due.gruppo.Crudcondbserver.service.impl;
 
+import due.gruppo.Crudcondbserver.dto.ListaProdottiDto;
 import due.gruppo.Crudcondbserver.model.Prodotto;
 import due.gruppo.Crudcondbserver.repository.ProdottoRepository;
 import due.gruppo.Crudcondbserver.service.CrudService;
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,25 +26,33 @@ public class CrudServiceImpl implements CrudService{
     
 
     @Override
-    public List<Prodotto> rimuovi(Prodotto p) {
+    public ListaProdottiDto rimuovi(Prodotto p) {
         prodottoRepository.delete(p);
         return aggiornaLista();
     }
 
     @Override
-    public List<Prodotto> cerca(String codice) {
-        return prodottoRepository.findByCodiceContains(codice);
+    public ListaProdottiDto cerca(String criterio) {
+        List<Prodotto> filtrati =  prodottoRepository.findByCodiceContains(criterio);
+        return new ListaProdottiDto(filtrati);
     }
     
     @Override
-    public List<Prodotto> conferma(Prodotto p) {
+    public ListaProdottiDto conferma(Prodotto p) {
         prodottoRepository.save(p);
          return aggiornaLista();
     }
     
     @Override
-     public List<Prodotto> aggiornaLista(){
-         return prodottoRepository.findAll();
+     public ListaProdottiDto aggiornaLista(){
+           ListaProdottiDto dto = new ListaProdottiDto();
+        List<Prodotto> lista = prodottoRepository.findAll();
+        if (lista == null) {
+            dto.setProdotti(new ArrayList<>());
+        } else {
+            dto.setProdotti(lista);
+        }
+        return dto;
      }
 
     }
